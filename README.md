@@ -14,4 +14,4 @@ Welcome to the File Sharing Web Application repository! This project is built us
 - **Backend**: Node.js and Express for server-side development.
 - **Database**: MongoDB for efficient and scalable data storage.
 - **File Storage**: Utilize a cloud storage service or local server for file storage.
-<img src="https://github.com/s21sd/Filesharing__MERN/blob/master/Scrrenfile.png" width="500" height="1000" alt="Image Description">
+<img src="https://github.com/s21sd/Filesharing__MERN/blob/master/Scrrenfile.png" width="1000" height="1000" alt="Image Description">
