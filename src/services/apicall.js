@@ -10,8 +10,11 @@ export const uploadFile = async (data) => {
 
     } catch (error) {
         console.log(error.message);
-        // console.log("Error coming in the client side");
-        // console.error("Error while calling api ", error.message);
+        // Return a proper error response instead of undefined
+        return {
+            error: error.message,
+            path: null
+        };
     }
 
 
