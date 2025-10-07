@@ -39,26 +39,26 @@ A modern, beautiful file sharing application built with the MERN stack (MongoDB,
 
 2. **Install dependencies**
    ```bash
-   # Install client dependencies
+   # Install frontend dependencies
    npm install
    
-   # Install server dependencies
+   # Install backend dependencies
    cd server
    npm install
    cd ..
    ```
 
-3. **Set up MongoDB**
-   - Create a MongoDB database (local or Atlas)
-   - Update the connection string in `server/database/db.js`
+3. **Set up Environment Variables**
+   - Copy `server/.env.example` to `server/.env`
+   - Update the MongoDB connection string and other variables
 
 4. **Start the application**
    ```bash
-   # Start the server (in one terminal)
+   # Start the backend server (in one terminal)
    cd server
    npm start
    
-   # Start the client (in another terminal)
+   # Start the frontend (in another terminal)
    npm start
    ```
 
@@ -70,27 +70,36 @@ A modern, beautiful file sharing application built with the MERN stack (MongoDB,
 
 ```
 QuickDrop/
-├── client/                 # React frontend
-│   ├── public/
-│   └── src/
-│       ├── App.js         # Main application component
-│       ├── App.css        # Styles
-│       └── services/
-│           └── apicall.js # API service functions
-├── server/                # Node.js backend
+├── public/                # React public assets
+│   ├── index.html
+│   ├── favicon.ico
+│   ├── manifest.json
+│   └── robots.txt
+├── src/                   # React frontend source
+│   ├── App.js            # Main application component
+│   ├── App.css           # Styles
+│   ├── index.js          # React entry point
+│   ├── index.css         # Global styles
+│   └── services/
+│       └── apicall.js    # API service functions
+├── server/               # Node.js backend
 │   ├── contorller/
 │   │   └── image-controlller.js
 │   ├── database/
-│   │   └── db.js         # MongoDB connection
+│   │   └── db.js        # MongoDB connection
 │   ├── models/
-│   │   └── file.js       # File model
+│   │   └── file.js      # File model
 │   ├── router/
-│   │   └── router.js     # API routes
-│   ├── uploads/          # File storage
+│   │   └── router.js    # API routes
+│   ├── uploads/         # File storage (with .gitkeep)
 │   ├── utils/
-│   │   └── upload.js     # Multer configuration
-│   └── index.js          # Server entry point
-└── README.md
+│   │   └── upload.js    # Multer configuration
+│   ├── .env.example     # Environment variables template
+│   ├── package.json     # Server dependencies
+│   └── index.js         # Server entry point
+├── package.json         # Frontend dependencies
+├── .gitignore          # Git ignore rules
+└── README.md           # Project documentation
 ```
 
 ## 🔧 Configuration

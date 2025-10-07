@@ -1,6 +1,7 @@
 import axios from "axios"
 
-const API_URL = "http://localhost:4000";
+// Prefer env var, fallback to 4000
+const API_URL = process.env.REACT_APP_API_URL || "http://localhost:4000";
 
 export const uploadFile = async (data) => {
 
@@ -9,10 +10,11 @@ export const uploadFile = async (data) => {
         return response.data;
 
     } catch (error) {
-        console.log(error.message);
-        // Return a proper error response instead of undefined
+        const serverMessage = error?.response?.data?.error;
+        const message = serverMessage || error.message || 'Upload failed';
+        console.log('Upload error:', message);
         return {
-            error: error.message,
+            error: message,
             path: null
         };
     }
